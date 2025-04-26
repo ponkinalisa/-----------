@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'Monomakh';
+    src: url('../fonts/ofont.ru_Monomakh Unicode.ttf');
+}
+@font-face {
+  font-family: 'TriodPostnaja';
+  src: url('../fonts/ofont.ru_TriodPostnaja.ttf');
+}
+@font-face {
+  font-family: 'Arnold BocklinC';
+  src: url('../fonts/ofont.ru_Arnold BocklinC Initial One.ttf');
+}
+
+// Переменные для цветов
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$background-color: #f4f4f4;
+
+// Переменные для шрифтов
+$font-family: 'Monomakh';
+$font-family-main-text: 'TriodPostnaj';
+$heading-font-size: 2em;
+$text-font-size: 1em;
+
+// Переменные для отступов
+$padding: 20px;
+
+
+// Миксин для добавления отступов
+@mixin add-padding($padding-size) {
+    padding: $padding-size;
+}
+
+// Основной стиль для блоков
+%block {
+  @include add-padding($padding);
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: $font-family;
+}
+
+header {
+    @extend %block;
+    background-color: $primary-color;
+    color: white;
+    text-align: center;
+  
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+  
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+  
+
+footer {
+  @extend %block;
+  background-color: $secondary-color;
+  color: white;
+  text-align: center;
+}
+
+main {
+    @extend %block;
+}
+
+article{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .text{
+    @extend %block;
+    width: 95%;
+    height: 100%;
+  }
+  
+  img{
+    @extend %block;
+    width: 30 * $text-font-size;
+    padding: 0;
+  }
+}
+.beatiful_places{
+  @extend %block;
+  padding: $padding  $padding * 2;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: $text-font-size * 3;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+}
+
+.card{
+  padding: $padding;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #aaddff;
+  border-radius: 5px;
+
+  img{
+    margin: 0;
+    width: 90%;
+    margin-left: 5%;
+  }
+  .text{
+    margin: 0;
+    width: 100%;
+    border: none;
+  }
+  p{
+    text-align: justify;
+    padding-right: 40px;
+  }
+}
+
+.title{
+  margin: 20px;
+  font-size: 50px;
+  text-align: center;
+}
+
+@media (min-width: 55em){
+  article{
+    flex-direction: row;
+  }
+  .beatiful_places{
+    padding: $padding  $padding;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 80em){
+    .beatiful_places{
+      grid-template-columns: repeat(3, 1fr);
+    }
+}
