@@ -1,0 +1,109 @@
+@font-face {
+  font-family: "Monomakh";
+  src: url("../fonts/ofont.ru_Monomakh Unicode.ttf");
+}
+@font-face {
+  font-family: "TriodPostnaja";
+  src: url("../fonts/ofont.ru_TriodPostnaja.ttf");
+}
+@font-face {
+  font-family: "Arnold BocklinC";
+  src: url("../fonts/ofont.ru_Arnold BocklinC Initial One.ttf");
+}
+.beatiful_places, article img, article .text, main, footer, header {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: "Monomakh";
+}
+
+header {
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+}
+header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+header a:hover {
+  color: #2ecc71;
+}
+
+footer {
+  background-color: #2ecc71;
+  color: white;
+  text-align: center;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+article .text {
+  width: 95%;
+  height: 100%;
+}
+article img {
+  width: 30em;
+  padding: 0;
+}
+
+.beatiful_places {
+  padding: 20px 40px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 3em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+}
+
+.card {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #aaddff;
+  border-radius: 5px;
+}
+.card img {
+  margin: 0;
+  width: 90%;
+  margin-left: 5%;
+}
+.card .text {
+  margin: 0;
+  width: 100%;
+  border: none;
+}
+.card p {
+  text-align: justify;
+  padding-right: 40px;
+}
+
+.title {
+  margin: 20px;
+  font-size: 50px;
+  text-align: center;
+}
+
+@media (min-width: 55em) {
+  article {
+    flex-direction: row;
+  }
+  .beatiful_places {
+    padding: 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 80em) {
+  .beatiful_places {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}/*# sourceMappingURL=styles.css.map */
