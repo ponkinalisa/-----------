@@ -34,6 +34,7 @@ $padding: 20px;
 // Основной стиль для блоков
 %block {
   @include add-padding($padding);
+  width: 100%;
   margin: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -80,16 +81,23 @@ article{
     width: 95%;
     height: 100%;
   }
-  
-  img{
-    @extend %block;
-    width: 30 * $text-font-size;
-    padding: 0;
+  section{
+    width: 100%;
+    padding: $padding;
+    display: grid;
+
+    img{
+      @extend %block;
+      position: relative;
+      width: 90%;
+      padding: 0;
+      grid-template-columns: 1fr;
+    }
   }
 }
 .beatiful_places{
   @extend %block;
-  padding: $padding  $padding * 2;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: $text-font-size * 3;
@@ -133,7 +141,7 @@ article{
     flex-direction: row;
   }
   .beatiful_places{
-    padding: $padding  $padding;
+    padding: $padding 2 * $padding;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }

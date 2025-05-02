@@ -10,8 +10,9 @@
   font-family: "Arnold BocklinC";
   src: url("../fonts/ofont.ru_Arnold BocklinC Initial One.ttf");
 }
-.beatiful_places, article img, article .text, main, footer, header {
+.beatiful_places, article section img, article .text, main, footer, header {
   padding: 20px;
+  width: 100%;
   margin: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -48,13 +49,20 @@ article .text {
   width: 95%;
   height: 100%;
 }
-article img {
-  width: 30em;
+article section {
+  width: 100%;
+  padding: 20px;
+  display: grid;
+}
+article section img {
+  position: relative;
+  width: 90%;
   padding: 0;
+  grid-template-columns: 1fr;
 }
 
 .beatiful_places {
-  padding: 20px 40px;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 3em;
@@ -97,7 +105,7 @@ article img {
     flex-direction: row;
   }
   .beatiful_places {
-    padding: 20px 20px;
+    padding: 20px 40px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
