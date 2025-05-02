@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Лабораторная работа по SCSS</title>
+  <title>Алтай</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="media/css/styles.css">
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+    <nav class="navbar navbar-expand-xl navbar-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Алтай</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic" aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,10 +21,19 @@
                 <a class="nav-link active" aria-current="page" href="main.html">Главная</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">О регионе</a>
+                <a class="nav-link" href="media/pages/about_region.html">О регионе</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Отключено</a>
+                <a class="nav-link" href="media/pages/attractions.html">Достопримечательности</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="media/pages/beauty_of_altai.html">Природа</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="media/pages/culture.html">Культура</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="media/pages/galery.html">Галерея</a>
               </li>
             </ul>
           </div>
@@ -33,18 +42,53 @@
 
     <h1>Добро пожаловать на сайт об Алтае!</h1>
 
-    <a href="#">Главная</a> | <a href="#">Туры</a> | <a href="#">Контакты</a>
+    <a href="">Главная</a> | <a href="#beatiful_places">Туры</a> | <a href="#footer">Контакты</a>
   </header>
 
   <main>
     <article>
-        <section>
-            <img src="media/img/Altai.jpg" alt="Алтай">
+      <section>
+          <img src="media/img/Altai.jpg" alt="Алтай">
+      </section>
+      <section class="text">
+          <h2>О Алтае</h2>
+          <p>Алтай — это красивый и загадочный регион с уникальной природой и богатой культурой.</p>
         </section>
-        <section class="text">
-            <h2>О Алтае</h2>
-            <p>Алтай — это красивый и загадочный регион с уникальной природой и богатой культурой.</p>
-          </section>
+  </article>
+
+
+    <article>  
+    <!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="media/img/chyia_track.jpg" alt="Чуйский тракт" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="media/img/schawlinskie.jpg" alt="Шавлинские озёра" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="media/img/teleckoe.jpg" alt="Телецкое озеро" class="d-block w-100">
+    </div>
+  </div>
+
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
     </article>
     <article>
         <section class="text">
@@ -64,7 +108,7 @@
 
     <h1 class="title">Красоты Алтая</h1>
 
-    <article class="beatiful_places">
+    <article class="beatiful_places" id="beatiful_places">
         <div class="card">
             <div class="img">
                 <img src="media/img/Beluga.jpg" alt="Алтай">
@@ -106,9 +150,50 @@
             </div>
         </div>
     </article>
+
+    <article>
+      <div class="accordion" id="tourAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Как добраться до Алтая?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#tourAccordion">
+            <div class="accordion-body">
+              До Алтая можно добраться как на автобусе, так и на поезде или самолёте. Обязательно уточните маршрут заранее.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Что взять с собой в поход по Алтаю?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#tourAccordion">
+            <div class="accordion-body">
+              Обязательно возьмите удобную обувь, термос, спальный мешок и тёплую одежду. Помните, что погода на Алтае может быть переменчивой.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Какие туры на Алтай наиболее популярны?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tourAccordion">
+            <div class="accordion-body">
+              На Алтае популярны пешие походы, велотуры и экскурсии по историческим местам. Вы можете выбрать тур в зависимости от уровня подготовки.
+            </div>
+          </div>
+        </div>
+      </div>      
+    </article>
   </main>
 
-  <footer>
+  <footer id="footer">
     <p>© 2025 Алтай Туры. Все права защищены.</p>
   </footer>
         
