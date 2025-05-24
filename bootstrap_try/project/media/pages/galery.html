@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Алтай</title>
   <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     .card > .text{
@@ -35,6 +36,28 @@
       align-self: center;
       text-align: center;
     }
+    .my_modal{
+      position: absolute;
+      top: 20%;
+      left: 20%;
+      width: 60%;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: white;
+      z-index: 10;
+      display: none;
+    }
+    .modal-footer{
+      margin: 10px;
+    }
+    .dark{
+      position:absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: 9;
+      background-color: rgba(0, 0, 0, 0.386);
+    }
   </style>
 </head>
 <body>
@@ -62,8 +85,8 @@
               <li class="nav-item">
                 <a class="nav-link" href="cultury.html">Культура</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="galery.html">Галерея</a>
+              <li class="nav-item active">
+                <a class="nav-link" href="galery.html">Галерея</a>
               </li>
             </ul>
           </div>
@@ -73,64 +96,80 @@
     <h1>Добро пожаловать на сайт об Алтае!</h1>
   </header>
 
-  <main>
+  <main id="app">
     <h1 class="title">Галерея Алтая</h1>
     <div class="container d-flex justify-content-center container-fluid">
         <div class="row">
-
           <div class="card col-12 col-sm-12 col-md-5 col-lg-5 col-xl-3">
-            <img src="https://avatars.mds.yandex.net/get-altay/7730813/2a00000183ea035b495062ac1d80d5ff4691/XXL_height" class="card-img-bottom" alt="card-img-bottom" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img src="https://balthazar.club/o/uploads/posts/2023-10/1696930881_balthazar-club-p-altai-dikaya-priroda-krasivo-66.jpg" class="card-img-bottom"alt="card-img-bottom" @click="play()">
           </div>
 
           <div class="card col-12 col-sm-12 col-md-5 col-lg-5 col-xl-3">
-            <img src="https://sun9-36.userapi.com/s/v1/ig2/S0OW9tE39TVu3Bnhyht0Bk-vUnP5JoMN2c4H8BkN7CvQ-WRyVUGge-mxQzGrnh7Z9rEfZjYJ2O3QeN-Z6-vjh9pW.jpg?quality=96&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,750x750&from=bu&u=LAORpEgeyBx-uSooRzBSlI-JZipwsw_0PLlCcQyAqSQ&cs=750x750" class="card-img-bottom" alt="card-img-bottom" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img src="https://avatars.mds.yandex.net/get-altay/7730813/2a00000183ea035b495062ac1d80d5ff4691/XXL_height" class="card-img-bottom"alt="card-img-bottom" @click="play()">
           </div>
 
           <div class="card col-12 col-sm-12 col-md-5 col-lg-5 col-xl-3">
-            <img src="https://pic.rutubelist.ru/video/e2/33/e233853335ffcece1a1e16d02327298e.jpg" class="card-img-bottom" alt="card-img-bottom" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img src="https://sun9-30.userapi.com/s/v1/ig2/gUVQx6s3GLJMG4SkGk24uVJY2akiaRsadLMXnHjzAp7VLJDq74zpXpJ14xjb0CpN9gqTk1f6wD4HiY6mWiJFIIIL.jpg?quality=96&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x479,1080x719,1200x799&from=bu&u=safVI_gJTbFFDqH3L4h0gqDEK9ReEm_eC_s1Vn4cAAk&cs=807x537" class="card-img-bottom"alt="card-img-bottom" @click="play()">
           </div>
 
           <div class="card col-12 col-sm-12 col-md-5 col-lg-5 col-xl-3">
-            <img src="https://balthazar.club/o/uploads/posts/2023-10/1696930881_balthazar-club-p-altai-dikaya-priroda-krasivo-66.jpg" class="card-img-bottom" alt="card-img-bottom" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img src="https://sun9-36.userapi.com/s/v1/ig2/S0OW9tE39TVu3Bnhyht0Bk-vUnP5JoMN2c4H8BkN7CvQ-WRyVUGge-mxQzGrnh7Z9rEfZjYJ2O3QeN-Z6-vjh9pW.jpg?quality=96&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,750x750&from=bu&u=LAORpEgeyBx-uSooRzBSlI-JZipwsw_0PLlCcQyAqSQ&cs=750x750" class="card-img-bottom"alt="card-img-bottom" @click="play()">
           </div>
 
           <div class="card col-12 col-sm-12 col-md-5 col-lg-5 col-xl-3">
-            <img src="https://i.pinimg.com/originals/b3/38/93/b338933dee04dd0cb8fc24abb5888f2d.jpg" class="card-img-bottom" alt="card-img-bottom" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img src="https://pic.rutubelist.ru/video/e2/33/e233853335ffcece1a1e16d02327298e.jpg" class="card-img-bottom"alt="card-img-bottom" @click="play()">
           </div>
-          
+
           <div class="card col-12 col-sm-12 col-md-5 col-lg-5 col-xl-3">
-            <img src="https://sun9-30.userapi.com/s/v1/ig2/gUVQx6s3GLJMG4SkGk24uVJY2akiaRsadLMXnHjzAp7VLJDq74zpXpJ14xjb0CpN9gqTk1f6wD4HiY6mWiJFIIIL.jpg?quality=96&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x479,1080x719,1200x799&from=bu&u=safVI_gJTbFFDqH3L4h0gqDEK9ReEm_eC_s1Vn4cAAk&cs=807x537" class="card-img-bottom" alt="card-img-bottom" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img src="https://i.pinimg.com/originals/b3/38/93/b338933dee04dd0cb8fc24abb5888f2d.jpg" class="card-img-bottom"alt="card-img-bottom" @click="play()">
           </div>
 
         </div>
     </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Изображение</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <img src="https://balthazar.club/o/uploads/posts/2023-10/1696930881_balthazar-club-p-altai-dikaya-priroda-krasivo-66.jpg" class="card-img-bottom" alt="card-img-bottom" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-      </div>
-    </div>
+<div class="my_modal" id="exampleModal">
+  <div class="modal-body">
+    <img src="https://balthazar.club/o/uploads/posts/2023-10/1696930881_balthazar-club-p-altai-dikaya-priroda-krasivo-66.jpg" class="card-img-bottom" alt="card-img-bottom">
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" @click="close()">Закрыть</button>
   </div>
 </div>
+
+<div class="dark"></div>
       
 
   <footer id="footer">
     <p>© 2025 Алтай Туры. Все права защищены.</p>
   </footer>
-        
+
+
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+        }
+      },
+      methods: {
+        play() {
+          document.getElementById('exampleModal').style.display = 'block';
+          document.getElementsByClassName('dark')[0].style.height = document.documentElement.scrollHeight + 'px';
+          console.log(document.documentElement.scrollHeight)
+          document.getElementsByClassName('dark')[0].style.display = 'block';
+        },
+        close(){
+          console.log(1);
+          document.getElementById('exampleModal').style.display = 'none';
+          document.getElementsByClassName('dark')[0].style.display = 'none';
+        }
+      }
+    });
+    app.mount('#app');
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
 </body>
 </html>
