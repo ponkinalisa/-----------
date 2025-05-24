@@ -132,6 +132,7 @@ article{
     margin: 0;
     width: 90%;
     margin-left: 5%;
+    border-radius: 10px;
   }
   .text{
     margin: 0;
@@ -148,6 +149,15 @@ article{
   margin: 20px;
   font-size: 50px;
   text-align: center;
+}
+
+select{
+  width: 10em;
+  height: 3em;
+  text-align: center;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 10px;
 }
 @media (min-width: 60em){
   .carousel{
