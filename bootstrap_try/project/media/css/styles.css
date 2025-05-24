@@ -32,6 +32,7 @@ header a {
 header a:hover {
   color: #2ecc71;
 }
+
 .navbar {
   position: relative;
   display: flex;
@@ -113,7 +114,13 @@ article section img {
   text-align: center;
 }
 
-@media (min-width: 55em) {
+@media (min-width: 60em) {
+  .carousel {
+    width: 60%;
+    margin: 0 20%;
+  }
+}
+@media (min-width: 50em) {
   article {
     flex-direction: row;
   }
@@ -126,9 +133,5 @@ article section img {
 @media (min-width: 80em) {
   .beatiful_places {
     grid-template-columns: repeat(3, 1fr);
-  }
-  .carousel {
-    width: 60%;
-    margin: 0 20%;
   }
 }/*# sourceMappingURL=styles.css.map */

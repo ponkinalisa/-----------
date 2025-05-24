@@ -149,7 +149,13 @@ article{
   font-size: 50px;
   text-align: center;
 }
-
+@media (min-width: 60em){
+  .carousel{
+      width: 60%;
+      margin: 0 20%;
+    }
+  
+}
 @media (min-width: 50em){
   article{
     flex-direction: row;
@@ -163,9 +169,5 @@ article{
 @media (min-width: 80em){
     .beatiful_places{
       grid-template-columns: repeat(3, 1fr);
-    }
-    .carousel{
-      width: 60%;
-      margin: 0 20%;
     }
 }
